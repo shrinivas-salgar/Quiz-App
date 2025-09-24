@@ -1,0 +1,113 @@
+        body {
+            background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 100%;
+            margin: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .question {
+            margin-bottom: 1.5rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border: 2px solid #d1d5db;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+            font-size: 0.9rem;
+        }
+
+        .option-label:hover {
+            background: #e5e7eb;
+            border-color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        input[type="radio"]:checked+.option-label {
+            background: #bfdbfe;
+            border-color: #1d4ed8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            color: #1d4ed8;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem;
+            text-align: center;
+            border-radius: 0.5rem 0.5rem 0 0;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .quiz-container {
+                margin: 0.5rem;
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            h1.text-3xl {
+                font-size: 1.75rem;
+            }
+
+            h2.text-2xl {
+                font-size: 1.5rem;
+            }
+
+            .question p {
+                font-size: 1rem;
+            }
+
+            .option-label {
+                font-size: 0.85rem;
+                padding: 0.5rem;
+            }
+
+            .submit-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            input[type="text"] {
+                font-size: 0.85rem;
+                padding: 0.5rem;
+            }
+
+            label {
+                font-size: 0.85rem;
+            }
+        }

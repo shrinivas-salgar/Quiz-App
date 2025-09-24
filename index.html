@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="text-2xl font-bold">Sanjeevan</h1>
+        </div>
+
+        <!-- User Input Form -->
+        <div id="userForm" class="mb-6">
+            <h1 class="text-3xl font-bold text-center mb-4 text-gray-800">Quiz App</h1>
+            <form id="userDetails" class="space-y-3">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Your Name" required class="mt-1 p-2 w-full border rounded-md focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="rollNo" class="block text-sm font-medium text-gray-700">Roll No</label>
+                    <input type="text" id="rollNo" name="rollNo" placeholder="Enter Your Roll No." required class="mt-1 p-2 w-full border rounded-md focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="branch" class="block text-sm font-medium text-gray-700">Branch</label>
+                    <input type="text" id="branch" name="branch" placeholder="Enter your branch" required class="mt-1 p-2 w-full border rounded-md focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="division" class="block text-sm font-medium text-gray-700">Division</label>
+                    <input type="text" id="division" name="division" placeholder="Enter your Division" required class="mt-1 p-2 w-full border rounded-md focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button type="button" onclick ="startquiz()" class="submit-btn">Start Quiz</button>
+            </form>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div id="quiz" class="hidden">
+            <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">General Knowledge Quiz</h2>
+            <form id="quizForm" class="space-y-4">
+                <!-- Question 1 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">1. What does the typeof operator return for null in JavaScript?</p>
+
+                    <input type="radio" name="q1" id="q1a" value="a" class="hidden">
+                    <label for="q1a" class="option-label">A. null</label>
+
+                    <input type="radio" name="q1" id="q1b" value="b" class="hidden">
+                    <label for="q1b" class="option-label">B. object</label>
+
+                    <input type="radio" name="q1" id="q1c" value="c" class="hidden">
+                    <label for="q1c" class="option-label">C. undefined</label>
+
+                    <input type="radio" name="q1" id="q1d" value="d" class="hidden">
+                    <label for="q1d" class="option-label">D. string</label>
+
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">2. Which of the following is NOT a primitive data type in JavaScript?</p>
+                    <input type="radio" name="q2" id="q2a" value="a" class="hidden">
+                    <label for="q2a" class="option-label">A. Symbol </label>
+                    <input type="radio" name="q2" id="q2b" value="b" class="hidden">
+                    <label for="q2b" class="option-label">B. Array</label>
+                    <input type="radio" name="q2" id="q2c" value="c" class="hidden">
+                    <label for="q2c" class="option-label">C. Boolean</label>
+                    <input type="radio" name="q2" id="q2d" value="d" class="hidden">
+                    <label for="q2d" class="option-label">D. BigInt</label>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">3. What is the behavior of variable declarations being moved to the top of their scope during compilation?</p>
+                    <input type="radio" name="q3" id="q3a" value="a" class="hidden">
+                    <label for="q3a" class="option-label">A. Closure</label>
+                    <input type="radio" name="q3" id="q3b" value="b" class="hidden">
+                    <label for="q3b" class="option-label">B. Event loop</label>
+                    <input type="radio" name="q3" id="q3c" value="c" class="hidden">
+                    <label for="q3c" class="option-label">C. Hoisting</label>
+                    <input type="radio" name="q3" id="q3d" value="d" class="hidden">
+                    <label for="q3d" class="option-label">D. Prototyping</label>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">4. What is the largest mammal?</p>
+                    <input type="radio" name="q4" id="q4a" value="a" class="hidden">
+                    <label for="q4a" class="option-label">A. Blue Whale</label>
+                    <input type="radio" name="q4" id="q4b" value="b" class="hidden">
+                    <label for="q4b" class="option-label">B. Elephant</label>
+                    <input type="radio" name="q4" id="q4c" value="c" class="hidden">
+                    <label for="q4c" class="option-label">C. Giraffe</label>
+                    <input type="radio" name="q4" id="q4d" value="d" class="hidden">
+                    <label for="q4d" class="option-label">D. Hippopotamus</label>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">5. What is the chemical symbol for Gold?</p>
+                    <input type="radio" name="q5" id="q5a" value="a" class="hidden">
+                    <label for="q5a" class="option-label">A. Au</label>
+                    <input type="radio" name="q5" id="q5b" value="b" class="hidden">
+                    <label for="q5b" class="option-label">B. Ag</label>
+                    <input type="radio" name="q5" id="q5c" value="c" class="hidden">
+                    <label for="q5c" class="option-label">C. Fe</label>
+                    <input type="radio" name="q5" id="q5d" value="d" class="hidden">
+                    <label for="q5d" class="option-label">D. Cu</label>
+                </div>
+                
+                <!-- Question 6 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">6. Which country hosted the 2020 Summer Olympics?</p>
+                    <input type="radio" name="q6" id="q6a" value="a" class="hidden">
+                    <label for="q6a" class="option-label">A. Brazil</label>
+                    <input type="radio" name="q6" id="q6b" value="b" class="hidden">
+                    <label for="q6b" class="option-label">B. Japan</label>
+                    <input type="radio" name="q6" id="q6c" value="c" class="hidden">
+                    <label for="q6c" class="option-label">C. China</label>
+                    <input type="radio" name="q6" id="q6d" value="d" class="hidden">
+                    <label for="q6d" class="option-label">D. Australia</label>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">7. What is the longest river in the world?</p>
+                    <input type="radio" name="q7" id="q7a" value="a" class="hidden">
+                    <label for="q7a" class="option-label">A. Nile</label>
+                    <input type="radio" name="q7" id="q7b" value="b" class="hidden">
+                    <label for="q7b" class="option-label">B. Amazon</label>
+                    <input type="radio" name="q7" id="q7c" value="c" class="hidden">
+                    <label for="q7c" class="option-label">C. Mississippi</label>
+                    <input type="radio" name="q7" id="q7d" value="d" class="hidden">
+                    <label for="q7d" class="option-label">D. Yangtze</label>
+                </div>
+                
+                <!-- Question 8 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">8. Who painted the Mona Lisa?</p>
+                    <input type="radio" name="q8" id="q8a" value="a" class="hidden">
+                    <label for="q8a" class="option-label">A. Leonardo da Vinci</label>
+                    <input type="radio" name="q8" id="q8b" value="b" class="hidden">
+                    <label for="q8b" class="option-label">B. Vincent van Gogh</label>
+                    <input type="radio" name="q8" id="q8c" value="c" class="hidden">
+                    <label for="q8c" class="option-label">C. Pablo Picasso</label>
+                    <input type="radio" name="q8" id="q8d" value="d" class="hidden">
+                    <label for="q8d" class="option-label">D. Michelangelo</label>
+                </div>
+                
+                <!-- Question 9 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">9. What is the smallest country in the world?</p>
+                    <input type="radio" name="q9" id="q9a" value="a" class="hidden">
+                    <label for="q9a" class="option-label">A. Monaco</label>
+                    <input type="radio" name="q9" id="q9b" value="b" class="hidden">
+                    <label for="q9b" class="option-label">B. Vatican City</label>
+                    <input type="radio" name="q9" id="q9c" value="c" class="hidden">
+                    <label for="q9c" class="option-label">C. Malta</label>
+                    <input type="radio" name="q9" id="q9d" value="d" class="hidden">
+                    <label for="q9d" class="option-label">D. San Marino</label>
+                </div>
+                
+                <!-- Question 10 -->
+                <div class="question">
+                    <p class="text-lg font-semibold">10. What is the powerhouse of the cell?</p>
+                    <input type="radio" name="q10" id="q10a" value="a" class="hidden">
+                    <label for="q10a" class="option-label">A. Nucleus</label>
+                    <input type="radio" name="q10" id="q10b" value="b" class="hidden">
+                    <label for="q10b" class="option-label">B. Mitochondria</label>
+                    <input type="radio" name="q10" id="q10c" value="c" class="hidden">
+                    <label for="q10c" class="option-label">C. Ribosome</label>
+                    <input type="radio" name="q10" id="q10d" value="d" class="hidden">
+                    <label for="q10d" class="option-label">D. Endoplasmic Reticulum</label>
+                </div>
+                
+                <button type="button" onclick="submitQuiz()" class="submit-btn">Submit Quiz</button>
+            </form>
+        </div>
+        
+        <!-- Result Section -->
+        <div id="result" class="hidden text-center">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Quiz Results</h2>
+            <p id="userInfo" class="mb-4 text-sm"></p>
+            <p id="score" class="text-lg font-semibold mb-4"></p>
+            <button onclick="restartQuiz()" class="submit-btn">Restart Quiz</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
